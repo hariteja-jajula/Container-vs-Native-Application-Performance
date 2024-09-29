@@ -1,0 +1,14 @@
+Running Point-to-Point Communication Benchmarks with 2 tasks (Native)...
+Running One-Sided Communication Benchmarks with 2 tasks (Native)...
+Running Point-to-Point Communication Benchmarks with 2 tasks (Container)...
+Running One-Sided Communication Benchmarks with 2 tasks (Container)...
+All benchmarks (Native and Container) completed.
+Comparison complete for osu_latency. Results saved to comparison_latency.log
+Comparison complete for osu_bibw. Results saved to comparison_bibw.log
+Comparison complete for osu_bw. Results saved to comparison_bw.log
+Comparison complete for osu_put_latency. Results saved to comparison_put_latency.log
+Comparison complete for osu_put_bw. Results saved to comparison_put_bw.log
+Comparison complete for osu_get_latency. Results saved to comparison_get_latency.log
+Comparison complete for osu_get_bw. Results saved to comparison_get_bw.log
+One or both of the log files for osu_acc_latency do not exist.
+All comparisons completed.

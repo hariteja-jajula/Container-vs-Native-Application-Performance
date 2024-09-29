@@ -1,0 +1,11 @@
+Running Collective Communication Benchmarks with 40 tasks (Native)...
+Running Collective Communication Benchmarks with 40 tasks (Container)...
+All collective benchmarks (Native and Container) completed.
+One or both of the log files for osu_barrier do not exist.
+One or both of the log files for osu_bcast do not exist.
+One or both of the log files for osu_reduce_scatter do not exist.
+One or both of the log files for osu_ibarrier do not exist.
+One or both of the log files for osu_ibcast do not exist.
+One or both of the log files for osu_ireduce do not exist.
+One or both of the log files for osu_iscatter do not exist.
+All comparisons for collective benchmarks completed.

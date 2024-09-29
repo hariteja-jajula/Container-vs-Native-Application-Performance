@@ -1,0 +1,28 @@
+This test requires exactly two processes
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[50481,1],37]
+  Exit code:    1
+--------------------------------------------------------------------------
+This test requires exactly two processes
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[1727543835.298178] [compute003:1259412:0]           debug.c:1294 UCX  WARN  ucs_debug_disable_signal: signal 1 was not set in ucs
+[1727543835.298193] [compute003:1259412:1]        spinlock.c:29   UCX  WARN  ucs_recursive_spinlock_destroy() failed: busy
+[compute003:1259412:1:1259849] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7fab74f0b050)
+[compute003:1259412:0:1259412] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7fab74f0b050)
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[50842,1],33]
+  Exit code:    1
+--------------------------------------------------------------------------

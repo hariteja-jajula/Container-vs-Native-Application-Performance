@@ -1,0 +1,71 @@
+
+# OSU MPI All-to-All Personalized Exchange Latency Test v5.6.3
+# Size       Avg Latency(us)
+[1727624789.740658] [compute004:1262912:0]          tcp_cm.c:757  UCX  ERROR tcp_ep 0x7fa6e0013ae0: reached maximum number of connection retries (25)
+[1727624789.740742] [compute004:1262912:0]          tcp_ep.c:1152 UCX  ERROR try to increase "net.core.somaxconn", "net.core.netdev_max_backlog", "net.ipv4.tcp_max_syn_backlog" to the maximum value on the remote node or increase UCX_TCP_MAX_CONN_RETRIES (=25)
+1                      82.08
+2                      78.61
+4                      77.18
+8                      79.54
+16                     84.58
+32                     90.52
+64                    108.45
+128                   164.63
+256                   301.54
+512                   577.50
+1024                 1938.30
+2048                 2167.24
+4096                 2788.56
+8192                 5088.46
+16384               11956.62
+32768               26241.64
+[compute004:1262912:0:1262912] rc_verbs_iface.c:120  send completion with error: remote access error [qpn 0x219aa wrid 0x1vendor_err 0x88]
+[compute004:1262912:0:1262912] rc_verbs_iface.c:120  [rqpn 0x2dc18 dlid=5 sl=0 port=1 src_path_bits=0]
+==== backtrace (tid:1262912) ====
+ 0  /usr/local/ucx/lib/libucs.so.0(ucs_handle_error+0x2e4) [0x7fa6f406dd84]
+ 1  /usr/local/ucx/lib/libucs.so.0(ucs_fatal_error_message+0xc2) [0x7fa6f406adc2]
+ 2  /usr/local/ucx/lib/libucs.so.0(ucs_log_default_handler+0xf5b) [0x7fa6f406fa8b]
+ 3  /usr/local/ucx/lib/libucs.so.0(ucs_log_dispatch+0xe4) [0x7fa6f406fec4]
+ 4  /usr/local/ucx/lib/ucx/libuct_ib.so.0(+0x3c36c) [0x7fa6ec18e36c]
+ 5  /usr/local/ucx/lib/ucx/libuct_ib.so.0(+0x3d2e4) [0x7fa6ec18f2e4]
+ 6  /usr/local/ucx/lib/libucp.so.0(ucp_worker_progress+0x7a) [0x7fa6f410d69a]
+ 7  /usr/local/openmpi-4.1.6/lib/libopen-pal.so.40(opal_progress+0x33) [0x7fa6f6927ac3]
+ 8  /usr/local/openmpi-4.1.6/lib/libmpi.so.40(ompi_request_default_wait_all+0x10d) [0x7fa6f70155ad]
+ 9  /usr/local/openmpi-4.1.6/lib/libmpi.so.40(ompi_coll_base_alltoall_intra_basic_linear+0x24d) [0x7fa6f706d0fd]
+10  /usr/local/openmpi-4.1.6/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoall_intra_dec_fixed+0x85) [0x7fa6ec083385]
+11  /usr/local/openmpi-4.1.6/lib/libmpi.so.40(MPI_Alltoall+0x167) [0x7fa6f7025937]
+12  /usr/local/libexec/osu-micro-benchmarks/mpi/collective/osu_alltoall() [0x402631]
+13  /lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fa6f6a8ad90]
+14  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fa6f6a8ae40]
+15  /usr/local/libexec/osu-micro-benchmarks/mpi/collective/osu_alltoall() [0x402915]
+=================================
+[compute004:1262912] *** Process received signal ***
+[compute004:1262912] Signal: Aborted (6)
+[compute004:1262912] Signal code:  (-6)
+[compute004:1262912] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7fa6f6aa3520]
+[compute004:1262912] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7fa6f6af79fc]
+[compute004:1262912] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7fa6f6aa3476]
+[compute004:1262912] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7fa6f6a897f3]
+[compute004:1262912] [ 4] /usr/local/ucx/lib/libucs.so.0(+0x30dc7)[0x7fa6f406adc7]
+[compute004:1262912] [ 5] /usr/local/ucx/lib/libucs.so.0(ucs_log_default_handler+0xf5b)[0x7fa6f406fa8b]
+[compute004:1262912] [ 6] /usr/local/ucx/lib/libucs.so.0(ucs_log_dispatch+0xe4)[0x7fa6f406fec4]
+[compute004:1262912] [ 7] /usr/local/ucx/lib/ucx/libuct_ib.so.0(+0x3c36c)[0x7fa6ec18e36c]
+[compute004:1262912] [ 8] /usr/local/ucx/lib/ucx/libuct_ib.so.0(+0x3d2e4)[0x7fa6ec18f2e4]
+[compute004:1262912] [ 9] /usr/local/ucx/lib/libucp.so.0(ucp_worker_progress+0x7a)[0x7fa6f410d69a]
+[compute004:1262912] [10] /usr/local/openmpi-4.1.6/lib/libopen-pal.so.40(opal_progress+0x33)[0x7fa6f6927ac3]
+[compute004:1262912] [11] /usr/local/openmpi-4.1.6/lib/libmpi.so.40(ompi_request_default_wait_all+0x10d)[0x7fa6f70155ad]
+[compute004:1262912] [12] /usr/local/openmpi-4.1.6/lib/libmpi.so.40(ompi_coll_base_alltoall_intra_basic_linear+0x24d)[0x7fa6f706d0fd]
+[compute004:1262912] [13] /usr/local/openmpi-4.1.6/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoall_intra_dec_fixed+0x85)[0x7fa6ec083385]
+[compute004:1262912] [14] /usr/local/openmpi-4.1.6/lib/libmpi.so.40(MPI_Alltoall+0x167)[0x7fa6f7025937]
+[compute004:1262912] [15] /usr/local/libexec/osu-micro-benchmarks/mpi/collective/osu_alltoall[0x402631]
+[compute004:1262912] [16] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7fa6f6a8ad90]
+[compute004:1262912] [17] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7fa6f6a8ae40]
+[compute004:1262912] [18] /usr/local/libexec/osu-micro-benchmarks/mpi/collective/osu_alltoall[0x402915]
+[compute004:1262912] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 48 with PID 1262346 on node compute004 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------

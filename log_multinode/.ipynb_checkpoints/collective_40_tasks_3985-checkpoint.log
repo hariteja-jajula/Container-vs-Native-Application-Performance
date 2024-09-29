@@ -1,0 +1,9 @@
+Running Collective Communication Benchmarks with 40 tasks (Native)...
+Running Collective Communication Benchmarks with 40 tasks (Container)...
+All collective benchmarks (Native and Container) completed.
+Comparison complete for osu_allgather. Results saved to comparison_allgather.log
+Comparison complete for osu_allreduce. Results saved to comparison_allreduce.log
+Comparison complete for osu_alltoall. Results saved to comparison_alltoall.log
+Comparison complete for osu_gather. Results saved to comparison_gather.log
+Comparison complete for osu_scatter. Results saved to comparison_scatter.log
+All comparisons for collective benchmarks completed.
