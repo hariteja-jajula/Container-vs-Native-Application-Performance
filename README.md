@@ -12,3 +12,4 @@ Key features:
 - Documentation on the setup and running of containerized applications
 - Scripts and logs for reproducibility of tests and results
 
+***Note : some large files have been excluded form the container in the repository for storage purpose and would not function as expected please use the definition file provided to build the container
